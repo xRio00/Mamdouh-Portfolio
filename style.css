@@ -94,7 +94,7 @@ h2 {
 .about-me {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   flex-wrap: wrap;
   text-align: left;
   gap: 20px;
@@ -125,6 +125,7 @@ h2 {
   vertical-align: middle;
   margin: 5px;
   display: block;
+  align-self: flex-start;
 }
 
 /* Skills */
