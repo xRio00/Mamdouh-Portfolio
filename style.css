@@ -94,9 +94,11 @@ h2 {
 .about-me {
   display: flex;
   align-items: center;
-  flex-wrap: wrap;
   justify-content: center;
-  text-align: center;
+  flex-wrap: wrap;
+  text-align: left;
+  gap: 20px;
+  padding: 20px;
 }
 
 #about-me h1 {
@@ -119,9 +121,9 @@ h2 {
 
 .profile_image {
   width: 600px;
-  height: fit-content;
+  height: auto;
   vertical-align: middle;
-  margin: 15px auto;
+  margin: 5px;
   display: block;
 }
 
