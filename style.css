@@ -94,6 +94,9 @@ h2 {
 .about-me {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  text-align: center;
 }
 
 #about-me h1 {
@@ -105,20 +108,21 @@ h2 {
 #about-me p {
   font-size: 18px;
   color: rgb(128, 128, 128);
-  margin-top: -1cm;
+  margin-top: 0;
 }
 
 #about-me ul {
   font-size: 18px;
   color: rgb(128, 128, 128);
-  margin-top: -1cm;
+  margin-top: 0;
 }
 
 .profile_image {
   width: 600px;
   height: fit-content;
   vertical-align: middle;
-  margin: 15px;
+  margin: 15px auto;
+  display: block;
 }
 
 /* Skills */
