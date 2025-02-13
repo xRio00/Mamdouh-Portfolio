@@ -95,6 +95,7 @@ html, body {
     text-align: center;
   }
   .profile_name {
+  font-size: 28px;
   text-align: center;
   width: 100%;
   display: flex;
