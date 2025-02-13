@@ -474,15 +474,16 @@ h2 {
     float: none; /* Remove float to prevent misalignment */
   }
 
-  .carousel-container {
-    width: 100%; /* Ensure it takes full width */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    padding: 20px 0;
-    margin: 0 20px;
-  }
+ .carousel-container {
+  width: 90%;
+  max-width: 600px; /* Prevent it from being too wide */
+  text-align: center;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
 
   .carousel-wrapper {
     width: 90%;
