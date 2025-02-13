@@ -1,9 +1,11 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mamdouh Abdelnaby - Portfolio</title>
     <link rel="stylesheet" href="./style.css">
-    <script src="./script.js"></script>
+    <script src="./script.js" defer></script>
+
   </head>
   <body>
     <!-- Navigation Bar -->
@@ -12,16 +14,26 @@
         <div class="profile_name">
           Mamdouh Abdelnaby
           <div class="contact_info">
-            <img src="html_finalprojimages/envelope.png" alt="https://icons8.com/icon/124377/circled-envelope">
-          m.34mer@gmail.com
+            <img src="html_finalprojimages/envelope.png" alt="Email Icon">
+            m.34mer@gmail.com
+          </div>
+          <div class="contact_info">
+            <img src="html_finalprojimages/phone.png" alt="Phone Icon">
+            <a href="https://wa.me/971551570890" target="_blank">+971551570890</a>
+          </div>
+          <!-- Social Media Links -->
+        <div class="social-icons">
+          <a href="https://www.facebook.com/xRio00" target="_blank"><img src="html_finalprojimages/fb.png" alt="Facebook"></a>
+          <a href="https://www.instagram.com/x.rio0" target="_blank"><img src="html_finalprojimages/ig.png" alt="Instagram"></a>
+          <a href="https://www.linkedin.com/in/mamdouh-amer" target="_blank"><img src="html_finalprojimages/in.png" alt="LinkedIn"></a>
+      </div>
         </div>
-        <div style="clear:both;"></div>
-        <div class="contact_info">
-          <img src="html_finalprojimages/phone.png" alt="https://icons8.com/icon/124377/circled-envelope">
-          +971551570890
-        </div>
-        </div>
-        <div class="topdiv">
+    
+        <!-- ✅ Hamburger Menu Button (Only Visible on Mobile) -->
+        <button class="menu-toggle" onclick="toggleMenu()">&#9776;</button>
+    
+        <!-- ✅ Navigation Links -->
+        <div class="topdiv" id="nav-links">
           <a class="topmenu" href="#about-me">About Me</a>
           <a class="topmenu" href="#skills">Skills</a>
           <a class="topmenu" href="#projects">Projects</a>
@@ -91,32 +103,32 @@
       <div style="clear:both;"></div>
       <div class="all_skills">
         <div class="skill">
-          <img src="html_finalprojimages/html5.png">
+          <img src="html_finalprojimages/html5.png" alt="HTML5">
           <h6>HTML</h6>
           <p>Proficient</p>
         </div>  
         <div class="skill">
-            <img src="html_finalprojimages/CSS3.png">
+            <img src="html_finalprojimages/CSS3.png" alt="CSS">
             <h6>CSS</h6>
             <p>Intermediate Level</p>
         </div>  
         <div class="skill">
-          <img src="html_finalprojimages/js.jpeg">
+          <img src="html_finalprojimages/js.jpeg" alt="JavaScript">
           <h6>JavaScript</h6>
           <p>Actively Improving Skills</p>
         </div>  
         <div class="skill">
-            <img src="html_finalprojimages/react.png">
+            <img src="html_finalprojimages/react.png" alt="Reactjs">
             <h6>React.js</h6>
             <p>Currently Learning</p>
         </div>  
         <div class="skill">
-            <img src="html_finalprojimages/node.png">
+            <img src="html_finalprojimages/node.png" alt="Nodejs">
             <h6>Node.js</h6>
             <p>Building Backend Applications</p> 
         </div>  
         <div class="skill">
-            <img src="html_finalprojimages/mongo.png">
+            <img src="html_finalprojimages/mongo.png" alt="MongoDB">
             <h6>MongoDB</h6>
             <p>Learning Database Management</p>
         </div>  
@@ -155,35 +167,26 @@
     <!-- Recommendations -->
     <section id="recommendations">
       <h2>Recommendations</h2>
-      <div style="clear:both;"></div>
-      <div class="all_recommendations" id="all_recommendations">
-        <div class="recommendation">
-          <span>&#8220;</span>
-          Mamdouh is a highly motivated developer with a strong problem-solving mindset. 
-          His ability to quickly grasp new concepts and apply them effectively makes him an excellent asset to any team.
-          <span>&#8221;</span>
-        </div>
-        <div class="recommendation">
-          <span>&#8220;</span>
-          It has been a pleasure working with Mamdouh. 
-          He demonstrates excellent technical skills and consistently delivers high-quality work. 
-          His dedication and attention to detail set him apart in any project.
-          <span>&#8221;</span>
-        </div>
-        <div class="recommendation">
-          <span>&#8220;</span>
-          Mamdouh is a proactive learner and a fantastic team player. 
-          His ability to adapt to new technologies and his strong work ethic make him a reliable and skilled developer.
-          <span>&#8221;</span>
-        </div>
-        <div class="recommendation">
-          <span>&#8220;</span>
-          Mamdouh has an exceptional ability to learn and implement new technologies efficiently. 
-          His passion for development, combined with his strong analytical skills, makes him a valuable contributor to any project or team.
-          <span>&#8221;</span>
-        </div>
+      <div class="carousel-container">
+          <div class="carousel-wrapper">
+            <button id="prev-btn" class="carousel-btn left">&#10094;</button>
+              <div class="carousel">
+                  <div class="carousel-track" id="carousel-track">
+                      <div class="recommendation-card">
+                          <p class="recommendation-text">&#8220;It has been a pleasure working with Mamdouh. He demonstrates excellent technical skills and consistently delivers high-quality work.&#8221;</p>
+                      </div>
+                      <div class="recommendation-card">
+                          <p class="recommendation-text">&#8220;Mamdouh is a proactive learner and a fantastic team player. His ability to adapt to new technologies and his strong work ethic make him a reliable developer.&#8221;</p>
+                      </div>
+                      <div class="recommendation-card">
+                          <p class="recommendation-text">&#8220;Mamdouh has an exceptional ability to learn and implement new technologies efficiently. His passion for development, combined with his strong analytical skills, makes him a valuable contributor to any project or team.&#8221;</p>
+                      </div>
+                  </div>
+              </div>
+              <button id="next-btn" class="carousel-btn right">&#10095;</button>
+          </div>
       </div>
-    </section>
+  </section>
 
     <!-- Recommendation Form -->
     <section id="contact">
@@ -212,5 +215,15 @@
       <h3>Thanks for leaving a recommendation &#128153; </h3>
       <button onclick="showPopup(false)">Ok</button>
     </div>
+    <footer>
+      <p>&copy; 2025 Mamdouh Abdelnaby. All Rights Reserved.</p>
+      <div class="social-icons">
+        <a href="https://www.facebook.com/xRio00" target="_blank"><img src="html_finalprojimages/fb.png" alt="Facebook"></a>
+        <a href="https://www.instagram.com/x.rio0" target="_blank"><img src="html_finalprojimages/ig.png" alt="Instagram"></a>
+        <a href="https://www.linkedin.com/in/mamdouh-amer" target="_blank"><img src="html_finalprojimages/in.png" alt="LinkedIn"></a>
+        <a href="https://wa.me/971551570890" target="_blank"><img src="html_finalprojimages/wa.png" alt="WhatsApp"></a>
+    </div>
+
+    </footer>
   </body>
 </html>
