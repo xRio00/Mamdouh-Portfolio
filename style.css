@@ -101,7 +101,9 @@ html, body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  padding-left: 0;
 }
+  
 
 .contact_info {
   display: flex;
@@ -194,7 +196,7 @@ h2 {
 
 /* Ensure the image has a proper size on desktop */
 .profile_image {
-  width: 600px;
+  width: 300px;
   height: auto;
   display: block;
   margin: auto;
@@ -208,7 +210,7 @@ h2 {
  }
 
  .profile_image {
-   width: 100%; /*Full viewport width*/
+   width: 40%; /*Full viewport width*/
    height: auto;
    max-height: 600px; /*Prevent too much height*/
    object-fit: cover; /*Ensures proper fit*/
@@ -290,7 +292,7 @@ h2 {
 @media screen and (max-width: 768px) {
   #skills h2{
     text-align: left;
-    font-size: 50px;
+    font-size: 250%;
     color: #7600bc;
     margin: 30px auto;
     padding-bottom: 20px;
@@ -338,7 +340,7 @@ h2 {
 }
   .projects h2{
     text-align: left;
-    font-size: 50px;
+    font-size: 250%;
     color: #7600bc;
     margin: 30px auto;
     padding-bottom: 20px;
@@ -469,7 +471,7 @@ h2 {
 
   #recommendations h2 {
     text-align: center;
-    font-size: 50px;
+    font-size: 250%;
     color: #7600bc;
     margin: 30px auto;
     padding-bottom: 20px;
