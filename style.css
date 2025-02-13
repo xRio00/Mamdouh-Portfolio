@@ -72,6 +72,14 @@ html, body {
   margin-right: 10px;
   float:left;
 }
+.profile_name a {
+  text-decoration: none; /* Removes the underline */
+  color: #FFD700; /* Matches the name color */
+}
+
+.profile_name a:hover {
+  color: #FFD700; /* Ensures color stays the same on hover */
+}
 
 /* ✅ Mobile Navbar */
 @media screen and (max-width: 1024px) {
