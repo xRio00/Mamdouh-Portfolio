@@ -2,18 +2,21 @@ body {
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+}
+
 /* Navigation Bar */
 
 #home {
-  background-color:  #7600bc;
-  padding-bottom: 1cm;
-  margin-left:-1cm;
-  margin-right:-1cm;
-  margin-top:-1cm;
-  padding-top: 2cm;
-  padding-bottom: 2cm;
-  height: 5mm;
- }
+  background-color: #7600bc;
+  padding: 15px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-decoration: none;
+}
 
 .topmenu {
   color: lightgray;
@@ -31,10 +34,17 @@ body {
 }
 
 .topdiv {
-  float: right;
-  padding-right: 1cm;
+  display: flex;
+  gap: 15px;
 }
-
+.menu-toggle {
+  display: none;
+  font-size: 30px;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
 .profile_name {
   float: left;
   padding-left: 2cm;
@@ -56,6 +66,74 @@ body {
   width:25px;
   margin-right: 10px;
   float:left;
+}
+
+/* ✅ Mobile Navbar */
+@media screen and (max-width: 1024px) {
+  #home {
+    flex-direction: column; /* Stack items */
+    text-align: center;
+    align-items: center;
+    padding: 20px;
+  }
+
+  .profile_name {
+    font-size: 28px; /* Slightly smaller font */
+    white-space: normal;
+  }
+}
+@media screen and (max-width: 768px) {
+
+  #home {
+    background-color: #7600bc;
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    justify-content: space-between;
+    flex-direction: row;
+    text-align: center;
+  }
+
+  .topdiv {
+    display: none; /* Hide menu initially */
+    flex-direction: column;
+    background-color: #7600bc;
+    position: absolute;
+    top: 160px;
+    left: 180px;
+    width: 50%;
+    padding: 10px 0;
+    text-align: center;
+    z-index: 999;
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .topmenu {
+    display: block;
+    padding: 15px 0;
+    font-size: 20px;
+    color: white;
+    text-decoration: none;
+  }
+
+  .menu-toggle {
+    width: 100px;
+    display: block;
+    top: 15px;
+    right: 0%;
+    background: none;
+    border: none;
+    font-size: 25px;
+    color: white;
+    cursor: pointer;
+    z-index: 1000;
+  }
+
+  /* ✅ Show menu when active */
+  .topdiv.active {
+    display: flex;
+  }
 }
 
 /* Titles */
@@ -89,43 +167,55 @@ h2 {
   display: flex;
 }
 
-/* About Me */
-
-.about-me {
+/* About Me - Desktop */
+#about-me {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  text-align: left;
+  flex-direction: row; /* Image beside text on desktop */
   gap: 20px;
-  padding: 20px;
+  max-width: fit-content;
 }
 
-#about-me h1 {
-  font-size: 65px;
-  margin-top: 90px;
-  color: #7600bc;
-}
-
-#about-me p {
-  font-size: 18px;
-  color: rgb(128, 128, 128);
-  margin-top: 0;
-}
-
-#about-me ul {
-  font-size: 18px;
-  color: rgb(128, 128, 128);
-  margin-top: 0;
-}
-
+/* Ensure the image has a proper size on desktop */
 .profile_image {
   width: 600px;
   height: auto;
-  vertical-align: middle;
-  margin: 5px;
   display: block;
-  align-self: flex-start;
+  margin: auto;
+}
+@media screen and (max-width: 768px) {
+  #about-me {
+    flex-direction: column; /*Stack image & text */
+   text-align: center;
+   padding: 0;
+   width: 100%;
+ }
+
+ .profile_image {
+   width: 100%; /*Full viewport width*/
+   height: auto;
+   max-height: 600px; /*Prevent too much height*/
+   object-fit: cover; /*Ensures proper fit*/
+   display: block;
+   margin: 0 auto; /*Center image*/
+ }
+
+ #about-me > div {
+   width: 100%;
+   padding: 20px;
+ }
+
+ #about-me h1 {
+   font-size: 35px;
+   margin-top: 10px;
+ }
+
+ #about-me p, #about-me ul {
+   font-size: 16px;
+   text-align: center;
+   padding: 0 15px;
+ }
+
 }
 
 /* Skills */
@@ -141,8 +231,8 @@ h2 {
   display: block;
   border-radius: 6px;
   text-align: center;
-  margin: 50px;
-  padding: 10px;
+  margin: 30px;
+  padding: 5px;
   width: 2in;
   font-size: 20px;
   box-shadow: 0 3px 10px gray;
@@ -175,6 +265,17 @@ h2 {
   justify-content: center;
 }
 
+@media screen and (max-width: 768px) {
+  #skills h2{
+    text-align: left;
+    font-size: 50px;
+    color: #7600bc;
+    margin: 30px auto;
+    padding-bottom: 20px;
+    float: none; /* Remove float to prevent misalignment */
+  }
+}
+
 /* Projects */
 
 .projects-container {
@@ -186,6 +287,7 @@ h2 {
   border: 1px solid lightgray;
   width: 75%;
   margin-left: 5cm;
+  margin: auto;
 }
 
 .project-card {
@@ -202,37 +304,172 @@ h2 {
   font-size: 20px;
   margin-left: 30px;
 }
-
+@media screen and (max-width: 768px) {
+  .projects h2{
+    text-align: left;
+    font-size: 50px;
+    color: #7600bc;
+    margin: 30px auto;
+    padding-bottom: 20px;
+    float: none; /* Remove float to prevent misalignment */
+  }
+}
 /* Recommendations */
 
-.all_recommendations {
+#recommendations h2{
+  text-align: justify;
+  font-size: 50px;
+  text-align: center;
+  float: left;
+  color: #7600bc;
+  margin: 30px;
+  margin-left: 60px;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+}
+
+.carousel-container {
+  min-width: 80%;
+  background: white;
+  padding: 0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  text-align: center;
+  margin: 0 150px;
+  height: 250px;
   display: flex;
   align-items: center;
-  margin-left: 1in;
-  flex-direction: row;
-  flex-flow: wrap;
-  padding: 20px;
+  justify-content: center;
 }
 
-.recommendation {
-  font-style: italic;
-  text-align: left;
-  width: 21.875rem;
-  padding: 1rem;
-  background-color: #fff;
-  border-radius: 11px;
-  box-shadow: 0 3px 10px var(--primary-shadow);
-  padding: 20px;
-  margin: 10px;
-  border:1px solid gray;
-  font-size: 18px;
-  height:150px
+.carousel-wrapper {
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 90%;
 }
 
-.recommendation span {
-  color: #7600bc;
-  font-size: 20px;
-  font-family: 'Times New Roman', Times, serif;
+.carousel {
+  width: 95%;
+  overflow: hidden;
+  white-space: nowrap;
+  height: 85%;
+  text-align: justify;
+  display: inline-flex;
+  align-items: center;
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.5s ease-in-out; 
+  will-change: transform;
+}
+
+.recommendation-card {
+  max-width: 400px;
+  flex: 0 0 100%;
+  background: white;
+  padding: 0%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  text-align: center;
+  display: flex;
+  margin: 10px 10px;
+  height: 200px;
+  align-items: center;
+  justify-content: center;
+  word-wrap: break-word;
+  white-space: normal;
+  overflow-wrap: break-word;
+}
+
+.recommendation-text {
+  text-align: center;
+  max-width: 90%;
+  line-height: 1.5;
+  word-wrap: break-word;
+  white-space: normal;
+  overflow-wrap: break-word;
+}
+
+.carousel-btn {
+  background-color: rgba(255, 255, 255, 0.8);
+  border: none;
+  cursor: pointer;
+  font-size: 24px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 10px;
+  z-index: 10;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  visibility: visible;
+}
+
+.left {
+  left: 10px;
+}
+
+.right {
+  right: 10px;
+}
+
+@media screen and (max-width: 768px) {
+
+  #recommendations h2 {
+    text-align: center;
+    font-size: 50px;
+    color: #7600bc;
+    margin: 30px auto;
+    padding-bottom: 20px;
+    float: none; /* Remove float to prevent misalignment */
+  }
+
+  .carousel-container {
+    width: 100%; /* Ensure it takes full width */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding: 20px 0;
+    margin: 0 20px;
+  }
+
+  .carousel-wrapper {
+    width: 90%;
+    max-width: 400px;
+  }
+
+  .carousel-btn {
+    width: 35px;
+    height: 35px;
+    font-size: 20px;
+  }
+
+  .left {
+    left: -30px;
+  }
+
+  .right {
+    right: -30px;
+  }
+}
+
+/* Auto-scroll effect */
+@keyframes scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-100%); }
+}
+
+.carousel-track {
+  animation: scroll 30s linear infinite;
 }
 
 /* Scroll to Top Button */
@@ -337,4 +574,71 @@ button:hover {
   border-radius: 6px;
   text-align: center;
   cursor: pointer;
+}
+
+/* Social Media Icons */
+.social-icons {
+  margin-top: 10px;
+  display: flex;
+  gap: 15px;
+}
+
+.social-icons a img {
+  width: 30px; /* Adjust size */
+  height: 30px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.social-icons a img:hover {
+  transform: scale(1.2); /* Slight zoom effect on hover */
+}
+
+/* Footer */
+footer {
+  background-color: #7600bc;
+  color: white;
+  text-align: center;
+  min-width: 100%; /* Full width */
+  min-height: 100px; /* Enough height */
+  padding: 20px;
+  position: relative;
+  bottom: 0;
+  left: 0;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footer-content p {
+  margin-bottom: 10px;
+}
+
+.social-icons {
+  display: flex;
+  gap: 15px;
+}
+
+.social-icons a img {
+  width: 30px;
+  height: 30px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.social-icons a img:hover {
+  transform: scale(1.2);
+}
+
+/* ✅ Fix for Mobile */
+@media screen and (max-width: 768px) {
+  footer {
+    text-align: center;
+    padding: 15px;
+  }
+
+  .social-icons {
+    justify-content: center;
+  }
 }
