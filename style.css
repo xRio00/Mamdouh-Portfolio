@@ -249,10 +249,10 @@ h2 {
 .all_skills {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center; /* Centers the skills */
-  align-items: center;
+  justify-content: center;
+  align-items: stretch; 
   text-align: center;
-  margin: 0 auto; /* Ensures it takes full width */
+  margin: 0 auto;
 }
 
 .skill {
